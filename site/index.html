@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"utf-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
+  <title>Scholar Dashboard</title>
+  <link rel=\"preconnect\" href=\"https://cdn.jsdelivr.net\" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; }
+    h1 { margin-bottom: 4px; }
+    .muted { color: #666; font-size: 0.9rem; }
+    table { border-collapse: collapse; width: 100%; margin-top: 12px; }
+    th, td { border-bottom: 1px solid #eee; padding: 8px; text-align: left; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 24px; }
+    @media (min-width: 960px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .card { border: 1px solid #eee; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    select { padding: 8px; border-radius: 8px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <h1>Scholar Dashboard</h1>
+  <div class=\"muted\" id=\"meta\"></div>
+
+  <table id=\"summary\">
+    <thead>
+      <tr>
+        <th>Author</th>
+        <th>Institution</th>
+        <th>Papers</th>
+        <th>Citations</th>
+        <th>h-Index</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class=\"card\">
+    <label for=\"authorSel\">Per-year view:</label>
+    <select id=\"authorSel\"></select>
+    <div class=\"grid\">
+      <div>
+        <canvas id=\"papersChart\" height=\"200\"></canvas>
+      </div>
+      <div>
+        <canvas id=\"citesChart\" height=\"200\"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js\"></script>
+  <script>
+  async function load() {
+    const res = await fetch('data/authors.json', {cache: 'no-cache'});
+    const data = await res.json();
+    const meta = document.getElementById('meta');
+    meta.textContent = `Data generated at ${new Date(data.generated_at).toLocaleString()}`;
+
+    const tbody = document.querySelector('#summary tbody');
+    tbody.innerHTML = '';
+    data.authors.forEach(a => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><a href=\"https://openalex.org/${a.openalex_id}\" target=\"_blank\" rel=\"noopener\">${a.name}</a></td>
+        <td>${a.institution ?? ''}</td>
+        <td>${a.works_count.toLocaleString()}</td>
+        <td>${a.cited_by_count.toLocaleString()}</td>
+        <td>${a.h_index ?? ''}</td>`;
+      tbody.appendChild(tr);
+    });
+
+    // Charts
+    const sel = document.getElementById('authorSel');
+    data.authors.forEach((a, i) => {
+      const opt = document.createElement('option');
+      opt.value = i; opt.textContent = a.name; sel.appendChild(opt);
+    });
+
+    const papersCtx = document.getElementById('papersChart');
+    const citesCtx = document.getElementById('citesChart');
+    let papersChart, citesChart;
+
+    function renderCharts(a) {
+      const labels = a.years;
+      if (papersChart) papersChart.destroy();
+      papersChart = new Chart(papersCtx, {
+        type: 'bar',
+        data: { labels, datasets: [{ label: 'Papers per year', data: a.papers_by_year }] },
+        options: { responsive: true, plugins: { legend: { display: true } } }
+      });
+      if (citesChart) citesChart.destroy();
+      citesChart = new Chart(citesCtx, {
+        type: 'line',
+        data: { labels, datasets: [{ label: 'Citations per year', data: a.cites_by_year }] },
+        options: { responsive: true, plugins: { legend: { display: true } } }
+      });
+    }
+
+    if (data.authors.length) {
+      renderCharts(data.authors[0]);
+      sel.addEventListener('change', () => renderCharts(data.authors[sel.value]));
+    }
+  }
+
+  load();
+  </script>
+</body>
+</html>
