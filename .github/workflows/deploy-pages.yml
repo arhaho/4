@@ -1,0 +1,47 @@
+name: Deploy GitHub Pages (site/)
+
+on:
+  workflow_run:
+    workflows: ["Refresh OpenAlex data"]  # name from your refresh.yml
+    types: [completed]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # If your project sits in a subfolder, set it here
+      # Example: openalex-scholar-dashboard/site
+      - name: Detect site path
+        id: detect
+        run: |
+          if [ -d openalex-scholar-dashboard/site ]; then
+            echo "site_path=openalex-scholar-dashboard/site" >> "$GITHUB_OUTPUT"
+          elif [ -d site ]; then
+            echo "site_path=site" >> "$GITHUB_OUTPUT"
+          else
+            echo "❌ Couldn't find site/ folder"; ls -la; exit 2
+          fi
+          echo "Using site path: $(cat $GITHUB_OUTPUT)"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ steps.detect.outputs.site_path }}
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
