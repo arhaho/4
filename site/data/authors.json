@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-08-29T01:59:21.902162Z",
+  "generated_at": "2025-08-30T01:53:52.404105Z",
   "authors": [
     {
       "name": "Arbër Hoti",
@@ -53,7 +53,7 @@
         46,
         19
       ],
-      "updated_at": "2025-08-29T01:59:22.573924Z"
+      "updated_at": "2025-08-30T01:53:53.645765Z"
     },
     {
       "name": "Driton Qehaja",
@@ -89,14 +89,14 @@
         27,
         7
       ],
-      "updated_at": "2025-08-29T01:59:23.036330Z"
+      "updated_at": "2025-08-30T01:53:54.620412Z"
     },
     {
       "name": "Gentrit Berisha",
       "openalex_id": "a5077615536",
       "institution": null,
       "works_count": 2,
-      "cited_by_count": 189,
+      "cited_by_count": 191,
       "h_index": 2,
       "years": [
         2015,
@@ -135,9 +135,9 @@
         31,
         17,
         8,
-        5
+        7
       ],
-      "updated_at": "2025-08-29T01:59:23.568358Z"
+      "updated_at": "2025-08-30T01:53:55.207734Z"
     }
   ]
 }
