@@ -1,22 +1,21 @@
 {
-  "generated_at": "2025-11-03T02:09:15.733880Z",
+  "generated_at": "2025-11-04T02:04:00.058296Z",
   "authors": [
     {
       "name": "Arbër Hoti",
       "openalex_id": "a5022322870",
       "institution": null,
-      "works_count": 45,
-      "cited_by_count": 169,
-      "h_index": 6,
+      "works_count": 43,
+      "cited_by_count": 189,
+      "h_index": 7,
       "years": [
+        2009,
+        2011,
         2012,
         2013,
-        2014,
-        2016,
         2017,
         2018,
         2019,
-        2020,
         2021,
         2022,
         2023,
@@ -24,43 +23,41 @@
         2025
       ],
       "papers_by_year": [
-        12,
-        2,
-        0,
-        0,
+        1,
+        3,
+        10,
+        1,
         2,
         1,
         1,
-        0,
         2,
         7,
         8,
         4,
-        2
+        1
       ],
       "cites_by_year": [
         0,
+        14,
+        14,
         0,
-        2,
-        4,
+        52,
         0,
-        11,
+        1,
+        36,
+        43,
+        15,
         7,
-        8,
-        11,
-        18,
-        37,
-        46,
-        26
+        0
       ],
-      "updated_at": "2025-11-03T02:09:16.635647Z"
+      "updated_at": "2025-11-04T02:04:01.172414Z"
     },
     {
       "name": "Driton Qehaja",
       "openalex_id": "a5042994430",
       "institution": null,
       "works_count": 22,
-      "cited_by_count": 55,
+      "cited_by_count": 67,
       "h_index": 4,
       "years": [
         2012,
@@ -68,8 +65,7 @@
         2021,
         2022,
         2023,
-        2024,
-        2025
+        2024
       ],
       "papers_by_year": [
         4,
@@ -77,67 +73,35 @@
         2,
         5,
         2,
-        7,
-        1
+        7
       ],
       "cites_by_year": [
+        2,
         0,
-        0,
-        1,
+        6,
+        38,
         3,
-        12,
-        27,
-        12
+        11
       ],
-      "updated_at": "2025-11-03T02:09:17.271314Z"
+      "updated_at": "2025-11-04T02:04:01.916852Z"
     },
     {
       "name": "Gentrit Berisha",
       "openalex_id": "a5077615536",
       "institution": null,
-      "works_count": 2,
-      "cited_by_count": 191,
-      "h_index": 2,
+      "works_count": 1,
+      "cited_by_count": 137,
+      "h_index": 1,
       "years": [
-        2015,
-        2016,
-        2017,
-        2018,
-        2019,
-        2020,
-        2021,
-        2022,
-        2023,
-        2024,
-        2025
+        2015
       ],
       "papers_by_year": [
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        1
       ],
       "cites_by_year": [
-        0,
-        6,
-        13,
-        19,
-        32,
-        25,
-        33,
-        31,
-        17,
-        8,
-        7
+        137
       ],
-      "updated_at": "2025-11-03T02:09:17.810784Z"
+      "updated_at": "2025-11-04T02:04:02.591942Z"
     }
   ]
 }
