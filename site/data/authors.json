@@ -1,12 +1,12 @@
 {
-  "generated_at": "2025-12-03T02:09:03.065041Z",
+  "generated_at": "2025-12-04T02:09:52.718706Z",
   "authors": [
     {
       "name": "Arbër Hoti",
       "openalex_id": "a5022322870",
       "institution": null,
       "works_count": 43,
-      "cited_by_count": 189,
+      "cited_by_count": 190,
       "h_index": 7,
       "years": [
         2009,
@@ -50,14 +50,14 @@
         7,
         0
       ],
-      "updated_at": "2025-12-03T02:09:03.885664Z"
+      "updated_at": "2025-12-04T02:09:53.180543Z"
     },
     {
       "name": "Driton Qehaja",
       "openalex_id": "a5042994430",
       "institution": null,
       "works_count": 22,
-      "cited_by_count": 67,
+      "cited_by_count": 70,
       "h_index": 4,
       "years": [
         2012,
@@ -83,7 +83,7 @@
         3,
         11
       ],
-      "updated_at": "2025-12-03T02:09:04.465208Z"
+      "updated_at": "2025-12-04T02:09:53.526049Z"
     },
     {
       "name": "Gentrit Berisha",
@@ -101,7 +101,7 @@
       "cites_by_year": [
         137
       ],
-      "updated_at": "2025-12-03T02:09:05.028156Z"
+      "updated_at": "2025-12-04T02:09:53.843986Z"
     }
   ]
 }
