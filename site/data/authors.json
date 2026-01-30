@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-01-29T02:44:43.690456Z",
+  "generated_at": "2026-01-30T02:45:13.154335Z",
   "authors": [
     {
       "name": "Arbër Hoti",
       "openalex_id": "a5022322870",
       "institution": null,
       "works_count": 43,
-      "cited_by_count": 190,
+      "cited_by_count": 195,
       "h_index": 7,
       "years": [
         2009,
@@ -41,23 +41,23 @@
         14,
         14,
         0,
-        52,
+        53,
         0,
         1,
         37,
-        48,
-        16,
-        8,
+        49,
+        17,
+        10,
         0
       ],
-      "updated_at": "2026-01-29T02:44:44.694586Z"
+      "updated_at": "2026-01-30T02:45:13.922762Z"
     },
     {
       "name": "Driton Qehaja",
       "openalex_id": "a5042994430",
       "institution": null,
       "works_count": 22,
-      "cited_by_count": 70,
+      "cited_by_count": 74,
       "h_index": 4,
       "years": [
         2012,
@@ -81,30 +81,33 @@
         2,
         0,
         7,
-        43,
+        44,
         4,
-        14,
+        17,
         0
       ],
-      "updated_at": "2026-01-29T02:44:45.320658Z"
+      "updated_at": "2026-01-30T02:45:14.327849Z"
     },
     {
       "name": "Gentrit Berisha",
       "openalex_id": "a5077615536",
       "institution": null,
-      "works_count": 1,
+      "works_count": 2,
       "cited_by_count": 137,
       "h_index": 1,
       "years": [
-        2015
+        2015,
+        2026
       ],
       "papers_by_year": [
+        1,
         1
       ],
       "cites_by_year": [
-        137
+        137,
+        0
       ],
-      "updated_at": "2026-01-29T02:44:45.913303Z"
+      "updated_at": "2026-01-30T02:45:14.673865Z"
     }
   ]
 }
